@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const book = await Book.findByPk(req.params.id);
-    return res.status(200).send({ data: book });
+    return res.status(200).send(book);
   } catch (err) {
     console.log(err.message);
     res.status(500).send({ message: err.message });
